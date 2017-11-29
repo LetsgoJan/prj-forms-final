@@ -12,7 +12,7 @@ import {copyStyles} from "@angular/animations/browser/src/util";
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
 
-  ingredients: Ingredient[];
+  public ingredients: Ingredient[];
   private subscription: Subscription;
 
   constructor(private slService: ShoppingListService) { }
@@ -37,6 +37,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   onEditItem(index: number) {
     let editItem = this.ingredients[index];
+    let i = 10;
     this.slService.startedEditing.next(editItem);
   }
 

@@ -3,6 +3,7 @@ import { Subject } from 'rxjs/Subject';
 import {Http} from "@angular/http";
 import {Injectable} from "@angular/core";
 import {ShoppingListComponent} from "./shopping-list.component";
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Injectable()
 export class ShoppingListService {
@@ -27,6 +28,7 @@ export class ShoppingListService {
   addIngredient(ingredient: Ingredient) {
     //this.ingredients.push(ingredient);
     //this.ingredientsChanged.next(this.ingredients.slice());
+    // this.ingredients.push(ingredient);
     return this.http.post('https://lesproject.herokuapp.com/api/shoppingList', ingredient);
 
   }
@@ -43,6 +45,11 @@ export class ShoppingListService {
     // this.ingredients[index] = newIngredient;
     // this.ingredientsChanged.next(this.ingredients.slice());
     // const ingredient = this.ingredients[index];
+    // for (let i = 0; i < this.ingredients.length; i++) {
+    //   let ingredient = this.ingredients[i];
+    //   if (ingredient._id == id) this.ingredients[i] = newIngredient;
+    // }
+    newIngredient._id = id;
     return this.http.put('https://lesproject.herokuapp.com/api/shoppingList/' + id, newIngredient);
   }
 

@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { Ingredient } from '../../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
+import { ShoppingListComponent} from "../shopping-list.component";
 
 @Component({
   selector: 'app-shopping-edit',
@@ -82,6 +83,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
         (response) => console.log(response),
         (error) => console.log(error)
       );
+
     this.onClear();
   }
 

@@ -27,7 +27,7 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient) {
     //this.ingredients.push(ingredient);
-    //this.ingredientsChanged.next(this.ingredients.slice());
+    // this.ingredientsChanged.next(this.ingredients.slice());
     // this.ingredients.push(ingredient);
     return this.http.post('https://lesproject.herokuapp.com/api/shoppingList', ingredient);
 
